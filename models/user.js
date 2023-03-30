@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
     age: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    isAdmin: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     }
   }, {
     sequelize,

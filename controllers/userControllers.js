@@ -7,12 +7,12 @@ module.exports = {
   getAllUser: async (req, res) => {
     try {
       const data = await user.findAll({
-        attributes: ["id", "username", "email", "age"],
-        where: {
-          age: {
-            [Op.gte]: 25 //gt = greater than, gte = greater then equal
-          }
-        }
+        // attributes: ["id", "username", "email", "age"],
+        // where: {
+        //   age: {
+        //     [Op.gte]: 25 //gt = greater than, gte = greater then equal
+        //   }
+        // }
       });
       res.status(200).send({
         status: true,
@@ -66,7 +66,7 @@ module.exports = {
       });
       if (!data[0]) {
         res.status(400).send({
-          status: true,
+          status: false,
           message: `id ${req.params.id} not found`
         });
       } else {
@@ -90,7 +90,7 @@ module.exports = {
       });
       if (!data) {
         res.status(400).send({
-          status: true,
+          status: false,
           message: `id ${req.params.id} not found`
         });
       } else {
